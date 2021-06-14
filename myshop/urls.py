@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from shop import views
-# from users.views import register
+from users.views import register
 import django.contrib.auth.urls as accounts
 
 urlpatterns = [
@@ -27,7 +27,7 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
     path('shop/', include('shop.urls', namespace='shop')),
     path('', views.IndexArticle.as_view(), name='index'),
-    # path('register/', register, name='register'),
+    path('register/', register, name='register'),
     path('', include(accounts)),
 ]
 
